@@ -66,6 +66,10 @@ for i in ${!repositories_choices[@]}; do
 	        echo "Backing up ${repositories[i]}..."
 		cd ${repositories_paths[i]}
 	        remote="git@${providers_url[j]}:danielorihuela/${repositories[i]}.git"
+		if !(git remote -v | grep origin); then
+		    git remote add origin $remote
+		    git push --all
+		fi
 	        if !(git remote -v | grep $remote); then
                     git remote set-url origin --add $remote
 	            git push --all
