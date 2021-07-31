@@ -19,7 +19,7 @@ If all went well, the tool creates the backups. From now on, whenever you do a p
 
 ** Features
 
-- Github and Gitlab are supported by default.
+- GitHub and GitLab are supported by default.
 - Git providers easily extensible (add new providers to git\under{}providers.sh).
 - Only needs to run once.
 
@@ -39,7 +39,7 @@ Omnigit has two preconditions.
 2. You need to have configured an SSH key for the git provider.
 
 If that is already the case, you can proceed. Otherwise, please check [[https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent][how to generate an ssh key]] 
-and how to add a new SSH key to the provider. Github for example, provides us the following [[https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account][documentation]].
+and how to add a new SSH key to the provider. GitHub for example, provides us the following [[https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account][documentation]].
 
 You can run Omnigit with the following command:
 
@@ -68,6 +68,14 @@ In Bash would be something like:
 # alias omnigit='export PATH=$PATH:"repository path" && "repository path"/omnigit.sh'
 alias omnigit='export PATH=$PATH:~/Desktop/Side-Project/omnigit && ~/Desktop/Side-Projects/omnigit/omnigit.sh'
 #+end_src
+
+** Caveats
+
+- If the git repository is local (i.e. the code is not in GitHub, GitLab or any other git provider), the "main" git provider will be the first provider, from the ones that you selected from the list, in order of appearance. E.g. if the list of git providers is GitHub, GitLab and Bitbucket, in that order, and you selected GitHub and Bitbucket. The "main" git provider will be GitHub.
+
+  By "main", we mean that when you execute ~git pull~, it will download the code from that specific provider. That is something relevant. If that provider has an outage, you will need to do some manual steps to pull the code from another git provider.
+
+- The repository is pushed to the git provider with the default configuration of that provider. For example, by default, GitLab creates private repositories where the =main= branch is protected, i.e. you cannot force a push. If you require further configuration, this tool does not provide it.
 
 ** Contributing
 
