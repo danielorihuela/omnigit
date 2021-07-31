@@ -1,4 +1,4 @@
-#+html: <p align="center"><img src="images/logo.png"/></p>
+#+html: <p align="center"><img src="images/logo.png" width="40%"/></p>
 
 Tool to backup your git repositories to a git provider.
 
@@ -13,13 +13,7 @@ The below images follow this flow:
 2. Ask which repositories to backup.
 3. Show the "configuration" and ask the user if they want to proceed.
 
-#+begin_export html
-<p align="center">
-  <img src="images/select_provider.png" width="20%">
-  <img src="images/select_repo.png" width="20%">
-  <img src="images/configuration.png" width="20%">
-</p>
-#+end_export
+#+html: <p align="center"> <img src="images/select_provider.png" width="20%"> <img src="images/select_repo.png" width="20%"> <img src="images/configuration.png" width="20%"> </p>
 
 If all went well, the tool creates the backups. From now on, whenever you do a push, all git providers will receive the update.
 
