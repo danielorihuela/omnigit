@@ -3,8 +3,11 @@
 GITHUB=0
 GITLAB=1
 
-providers[GITHUB]="Github"
-providers[GITLAB]="Gitlab"
+# Providers names to show in items list
+providers[GITHUB]="GitHub"
+providers[GITLAB]="GitLab"
 
+# Providers url to push the code
+# Complete url example git@github.com:danielorihuela/omnigit.git
 providers_url[GITHUB]="github.com"
 providers_url[GITLAB]="gitlab.com"
