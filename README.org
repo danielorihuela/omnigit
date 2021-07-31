@@ -66,7 +66,7 @@ If you want to call Omnigit from anywhere on your computer, you can configure an
 In Bash would be something like:
 #+begin_src sh
 # alias omnigit='export PATH=$PATH:"repository path" && "repository path"/omnigit.sh'
-alias omnigit='export PATH=$PATH:~/Desktop/Side-Project/omnigit && ~/Desktop/Side-Projects/omnigit/omnigit.sh'
+alias omnigit='export PATH=$PATH:~/Desktop/Side-Projects/omnigit && ~/Desktop/Side-Projects/omnigit/omnigit.sh'
 #+end_src
 
 ** Caveats
