@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Import title
+. title.sh
+
 # Import list functionality
 . item_list.sh
 
@@ -18,7 +21,7 @@ fi
 # SELECT GIT PROVIDERS
 clear
 providers_title() {
-    cat title
+    print_title
     echo "Menu providers"
 }
 select_items providers_title providers providers_choices
@@ -32,7 +35,7 @@ done
 
 clear
 repositories_title() {
-    cat title
+    print_title
     echo "Menu repositories"
 }
 select_items repositories_title repositories repositories_choices
